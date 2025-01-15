@@ -1,8 +1,8 @@
-**Name:**
+**Name:Lihan Zhou**
 
-**Github Account name:**
+**Github Account name:Eternity1824**
 
-**Link to Assignment on Github:** (copy and paste the link to your assignment repo here)
+**Link to Assignment on Github:https://github.com/5004-SEA-Fa24-Geeng/hello-world-Eternity1824.git** (copy and paste the link to your assignment repo here)
 
 How many hours did it take you to complete this assignment (estimate)?
 
