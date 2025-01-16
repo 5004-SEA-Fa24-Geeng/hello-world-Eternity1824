@@ -7,11 +7,43 @@ The following report contains questions you need to answer as part of your submi
 Please link your UML design file here. See resources in the assignment on how to
 link an image in markdown. You may also use [mermaid] class diagrams if you prefer, if so, include the mermaid code here.  You DO NOT have to include Greeting.java as part of the diagram, just the AlohaWorld application that includes: [AlohaWorld.java], [Greeter.java], and [ConsoleView.java].
 
+# Aloha World UML Diagram
+
+Below is the UML diagram for the Aloha World application:
+
+```mermaid
+---
+title: Aloha World UML
+---
+classDiagram
+    direction LR
+    AlohaWorld --> Greeter 
+    AlohaWorld --> ConsoleView : uses
+    ConsoleView --> Greeter : uses
+    class AlohaWorld {
+        - AlohaWorld()
+        + main(String[] args)
+    }
+    class Greeter {
+        - String name
+        - int locality
+        + Greeter(String name, int locality)
+        + String greet()
+        + void setLocality(int locality)
+    }
+    class ConsoleView {
+        + static String getName()
+        + static int getLocality()
+        + static void printGreeting(String message)
+        + static boolean checkRunAgain()
+    }
+```
 
 
 ### Program Flow
 Write a short paragraph detailing the flow of the program in your own words. This is to help you understand / trace the code (and give you practice of something called a code walk that will be required in this course).
 
+The Aloha World application starts in the main() method of the AlohaWorld class. It collects the user’s name and location via ConsoleView and uses the Greeter class to generate personalized greetings. The greeting is displayed, and the program enters a loop to update the greeting with new locations until the user opts to exit. This design separates the logic for input, output, and greeting generation.
 
 ## Assignment Questions
 
