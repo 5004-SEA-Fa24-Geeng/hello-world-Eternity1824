@@ -54,8 +54,7 @@ classDiagram
 ### Program Flow
 Write a short paragraph detailing the flow of the program in your own words. This is to help you understand / trace the code (and give you practice of something called a code walk that will be required in this course).
 
-The Aloha World application starts in the main() method of the AlohaWorld class. It collects the user’s name and location via ConsoleView and uses the Greeter class to generate personalized greetings. The greeting is displayed, and the program enters a loop to update the greeting with new locations until the user opts to exit. This design separates the logic for input, output, and greeting generation.
-
+The Aloha World application starts in the main() method of the AlohaWorld class. It collects the user’s name and location using ConsoleView, which interacts with the user through static methods. The Greeter class is instantiated with the user’s details, generating personalized greetings displayed via ConsoleView. The program allows the user to update their location in a loop until they choose to exit, effectively separating input handling, greeting generation, and program control.
 ## Assignment Questions
 
 1. List three additional java syntax items you didn't know when reading the code.  (make sure to use * for the list items, see example below, the backtick marks are used to write code inline with markdown)
