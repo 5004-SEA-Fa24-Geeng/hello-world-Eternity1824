@@ -16,27 +16,38 @@ Below is the UML diagram for the Aloha World application:
 title: Aloha World UML
 ---
 classDiagram
-    direction LR
-    AlohaWorld --> Greeter 
-    AlohaWorld --> ConsoleView : uses
-    ConsoleView --> Greeter : uses
-    class AlohaWorld {
-        - AlohaWorld()
-        + main(String[] args)
-    }
-    class Greeter {
-        - String name
-        - int locality
-        + Greeter(String name, int locality)
-        + String greet()
-        + void setLocality(int locality)
-    }
-    class ConsoleView {
-        + static String getName()
-        + static int getLocality()
-        + static void printGreeting(String message)
-        + static boolean checkRunAgain()
-    }
+   direction LR
+   AlohaWorld --> Greeter
+   AlohaWorld --> ConsoleView : uses
+   ConsoleView --> Greeter : uses
+   class AlohaWorld {
+      - AlohaWorld()
+      + main(String[] args)
+   }
+   class Greeter {
+      - int locality
+      - static List~String~ localityList
+      + Greeter(String name)
+      + Greeter(String name, int locality)
+      + String getName()
+      + int getLocality()
+      + void setLocality(int locality)
+      + String greet()
+      + String greet(boolean asciiOnly)
+      + static List~String~ getLocalityList()
+      + int hashCode()
+      + boolean equals(Object obj)
+      + String toString()
+      - String getLocalityString()
+   }
+   class ConsoleView {
+      - ConsoleView()
+      + static String getName()
+      + static int getLocality()
+      + static boolean checkRunAgain()
+      + static void printGreeting(String greeting)
+   }
+
 ```
 
 
