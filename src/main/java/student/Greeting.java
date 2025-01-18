@@ -112,8 +112,11 @@ public class Greeting {
      * @return format string with greeting inserted
      */
     public String getFormatStr(boolean asciiOnly) {
-        String greeting = asciiOnly ? asciiGreeting : unicodeGreeting;
-        return String.format(formatString, greeting, "%s");
+        if (localityId == 3) { // Special case only for Chinese greeting
+            String greeting = asciiOnly ? asciiGreeting : unicodeGreeting;
+            return String.format("%%s, %s!", greeting);
+        }
+        return String.format(formatString, asciiOnly ? asciiGreeting : unicodeGreeting, "%s");
     }
 
     /**
@@ -122,7 +125,10 @@ public class Greeting {
      * @return the raw format string
      */
     public String getFormatStr() {
-        return formatString;
+        if (localityId == 3) { // Special case only for Chinese greeting
+            return String.format("%%s, %s!", unicodeGreeting);
+        }
+        return String.format(formatString, unicodeGreeting, "%s");
     }
 
     /**
