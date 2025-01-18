@@ -31,7 +31,8 @@ public class Greeting {
     /** Default format string used when not specified. */
     private static final String DEFAULT_FORMAT = "%s, %s!";
 
-    private final int ChinaID = 3;
+    /** ID for Chinese locality. */
+    private final int chinaID = 3;
 
     /**
      * Constructor that specifies all greeting properties.
@@ -112,7 +113,7 @@ public class Greeting {
      * @return format string with greeting inserted
      */
     public String getFormatStr(boolean asciiOnly) {
-        if (localityId == ChinaID) { // Special case only for Chinese greeting
+        if (localityId == chinaID) { // Special case only for Chinese greeting
             String greeting = asciiOnly ? asciiGreeting : unicodeGreeting;
             return String.format("%%s, %s!", greeting);
         }
@@ -125,7 +126,7 @@ public class Greeting {
      * @return the raw format string
      */
     public String getFormatStr() {
-        if (localityId == ChinaID) { // Special case only for Chinese greeting
+        if (localityId == chinaID) { // Special case only for Chinese greeting
             return String.format("%%s, %s!", unicodeGreeting);
         }
         return String.format(formatString, unicodeGreeting, "%s");
