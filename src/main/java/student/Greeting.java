@@ -31,7 +31,7 @@ public class Greeting {
     /** Default format string used when not specified. */
     private static final String DEFAULT_FORMAT = "%s, %s!";
 
-    private int ChinaID = 3;
+    private final int ChinaID = 3;
 
     /**
      * Constructor that specifies all greeting properties.
