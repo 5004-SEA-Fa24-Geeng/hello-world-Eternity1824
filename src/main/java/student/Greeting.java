@@ -31,6 +31,8 @@ public class Greeting {
     /** Default format string used when not specified. */
     private static final String DEFAULT_FORMAT = "%s, %s!";
 
+    private int ChinaID = 3;
+
     /**
      * Constructor that specifies all greeting properties.
      *
@@ -74,7 +76,7 @@ public class Greeting {
     }
 
     /**
-     * get the localityID
+     * get the localityID.
      * @return the local id
      */
     public int getLocalityID() {
@@ -82,7 +84,7 @@ public class Greeting {
     }
 
     /**
-     * get the locality name
+     * get the locality name.
      * @return the locality name
      */
     public String getLocalityName() {
@@ -90,21 +92,19 @@ public class Greeting {
     }
 
     /**
-     * get the Unicode version of greeting
+     * get the Unicode version of greeting.
      * @return Unicode greeting
      */
     public String getUnicodeGreeting() {
         return unicodeGreeting;
     }
-
     /**
-     * get the Ascii version of greeting
+     * get the Ascii version of greeting.
      * @return the Ascii greeting
      */
     public String getAsciiGreeting() {
         return asciiGreeting;
     }
-
     /**
      * Returns the format string with the wanted greeting inserted.
      *
@@ -112,7 +112,7 @@ public class Greeting {
      * @return format string with greeting inserted
      */
     public String getFormatStr(boolean asciiOnly) {
-        if (localityId == 3) { // Special case only for Chinese greeting
+        if (localityId == ChinaID) { // Special case only for Chinese greeting
             String greeting = asciiOnly ? asciiGreeting : unicodeGreeting;
             return String.format("%%s, %s!", greeting);
         }
@@ -125,14 +125,14 @@ public class Greeting {
      * @return the raw format string
      */
     public String getFormatStr() {
-        if (localityId == 3) { // Special case only for Chinese greeting
+        if (localityId == ChinaID) { // Special case only for Chinese greeting
             return String.format("%%s, %s!", unicodeGreeting);
         }
         return String.format(formatString, unicodeGreeting, "%s");
     }
 
     /**
-     * for default format of generate String
+     * for default format of generate String.
      */
     private static final String TO_STRING_FORMAT =
             "{localityID:%d, localityName:\"%s\", asciiGreeting:\"%s\", unicodeGreeting:\"%s\"}";
@@ -142,7 +142,7 @@ public class Greeting {
      * @return String with locality ID, name, and both greeting versions
      */
     @Override
-    public String toString(){
+    public String toString() {
         return String.format(TO_STRING_FORMAT, localityId, localityName, asciiGreeting, unicodeGreeting);
     }
 
